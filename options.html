@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Erica Hsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Städtjänster</title>
+</head>
+
+<body onload="loadOptions();">
+    <div class="topnav">
+        <a href="#">Kontakt</a>
+        <a href="#">Om oss</a>
+        <a href="options.html">Beräkna pris</a>
+        <a href="index.html">Start</a>
+    </div>
+
+    <div class="container">
+        <h1>Välj städtjänster och beräkna kostnaden</h1>
+        <div class="form-container">
+
+            <!-- Select city (dropdown) -->
+            <div class="formbox">
+                <label for="location-dd">Välj stad: </label>
+                <select id="location-dd" name="location-dd" onchange="renderOptionsByCity(this.value)"
+                    class="select"></select>
+            </div>
+
+            <!-- Price and input -->
+            <div class="formbox format">
+                <label for="p">Städpris per kvm</label>
+                <input type="text" id="cityprice" disabled> SEK<br><br>
+
+                <label for="squaremeter">Ange yta som ska städas: </label>
+                <input type="number" id="squaremeter" name="squaremeter" min="0" max="300" onchange="calculateOffer();">kvm
+            </div>
+
+            <!-- Options and calculate -->
+            <div id="option-container" class="formbox">
+                <label>Tillval</label>
+            </div>            
+
+            <!-- Show total price -->
+            <div class="formbox">
+                <label for="totalsum" class="total">Ditt pris: </label>
+                <label id="totalsum" class="total"></label>
+            </div>
+
+            <!-- Book -->
+            <div class="formbox">
+                <button id="btn-offer" class="btn btn-success" onclick="startOffer();" disabled>Gå vidare</button>                
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

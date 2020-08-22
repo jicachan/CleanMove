@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Erica Hsu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Städoffert</title>    
+</head>
+
+<body onload="getCleaningOffer();">
+    <div class="topnav">
+        <a href="#">Kontakt</a>
+        <a href="#">Om oss</a>
+        <a href="options.html">Beräkna pris</a>
+        <a href="index.html">Start</a>
+    </div>
+
+    <div class="container">
+        <h1>Tack för din bokning!</h1>
+        <p>Städoffert baserad på dina val.</p>
+
+        <div class="offer">
+            <div class="row">
+                <div class="col">
+                    <h2>Städoffert</h2>            
+                </div>
+                <div class="col right">
+                   <p id="currentdate"></p>                        
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4 subtitle"><label>Benämning/beskrivning</label></div>
+                <div class="col-4 subtitle"><label></label></div>            
+                <div class="col-2 subtitle right"><label>Belopp</label></div>            
+                <div class="col-2 subtitle"><label></label></div>            
+            </div>
+
+            <!-- City -->
+            <div class="row">
+                <div class="col-4">Ort</div>
+                <div id="o_location" class="col-4"></div>            
+                <div class="col-2"></div>            
+                <div class="col-2"></div>            
+            </div>
+
+            <!-- City price -->
+            <div class="row">
+                <div class="col-4">Pris per kvadratmeter</div>
+                <div id="o_cityprice" class="col-4"></div>            
+                <div class="col-2 right sum"></div>            
+                <div class="col-2">SEK</div>            
+            </div>
+
+            <!-- Cleaning area -->
+            <div class="row">
+                <div class="col-4">Städyta</div>
+                <div id="o_area" class="col-4"></div>            
+                <div class="col-2"></div>            
+                <div class="col-2">kvm</div>            
+            </div>
+
+            <!-- Cleaning cost -->
+            <div class="row">
+                <div class="col-4">Städkostnad</div>
+                <div class="col-4"></div>            
+                <div id="o_cost" class="col-2 right sum"></div>            
+                <div class="col-2">SEK</div>            
+            </div>
+
+            <!-- Options -->
+            <div id="o_options" ></div>
+
+            <!-- Total sum -->
+            <div class="row">
+                <div class="col-4 subtitle"></div>
+                <div class="col-4 subtitle"><label>Totalt</label></div>            
+                <div id="" class="col-2 subtitle right">
+                    <label id="o_totalsum"></label>
+                </div>            
+                <div class="col-2 subtitle"><label>SEK</label></div>            
+            </div>            
+        </div>
+    </div>    
+
+    <script src="script.js"></script>    
+</body>
+</html>
